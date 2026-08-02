@@ -1,0 +1,58 @@
+@import 'tailwindcss';
+@import '@fontsource-variable/vazirmatn';
+
+@theme {
+  --font-sans: 'Vazirmatn Variable', system-ui, sans-serif;
+
+  --color-rose-50: #fdf3f6;
+  --color-rose-100: #fbe6ed;
+  --color-rose-200: #f7cddb;
+  --color-rose-300: #f0a5be;
+  --color-rose-400: #e6739a;
+  --color-rose-500: #d94a7a;
+  --color-rose-600: #c22e60;
+  --color-rose-700: #a3234f;
+  --color-rose-800: #872047;
+  --color-rose-900: #741f40;
+
+  --color-cream-50: #fffdf9;
+  --color-cream-100: #fdf8ef;
+  --color-cream-200: #f8edd9;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  font-family: var(--font-sans);
+  background-color: var(--color-cream-50);
+  color: #2b2530;
+}
+
+::selection {
+  background-color: var(--color-rose-200);
+  color: #2b2530;
+}
+
+.no-scrollbar::-webkit-scrollbar {
+  display: none;
+}
+.no-scrollbar {
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+}
+
+@keyframes fade-in {
+  from {
+    opacity: 0;
+    transform: translateY(6px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+.animate-fade-in {
+  animation: fade-in 0.35s ease-out both;
+}
