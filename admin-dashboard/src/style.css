@@ -1,0 +1,62 @@
+@import 'tailwindcss';
+
+/* حالت تاریک بر اساس کلاس .dark روی <html> */
+@custom-variant dark (&:where(.dark, .dark *));
+
+@theme {
+  --font-sans: 'Vazirmatn Variable', ui-sans-serif, system-ui, sans-serif;
+
+  --color-brand-50: oklch(0.962 0.018 272.3);
+  --color-brand-100: oklch(0.93 0.034 272.8);
+  --color-brand-400: oklch(0.673 0.182 276.9);
+  --color-brand-500: oklch(0.585 0.233 277.1);
+  --color-brand-600: oklch(0.511 0.262 276.97);
+  --color-brand-700: oklch(0.457 0.24 277.02);
+}
+
+@layer base {
+  html {
+    -webkit-tap-highlight-color: transparent;
+  }
+
+  body {
+    @apply bg-slate-50 font-sans text-slate-800 antialiased dark:bg-slate-950 dark:text-slate-200;
+  }
+
+  /* اعداد هم‌عرض در جدول‌ها و کارت‌ها */
+  .tabular {
+    font-variant-numeric: tabular-nums;
+  }
+}
+
+@utility card {
+  @apply rounded-2xl border border-slate-200 bg-white shadow-sm dark:border-slate-800 dark:bg-slate-900;
+}
+
+@utility input {
+  @apply block w-full rounded-xl border border-slate-300 bg-white px-3.5 py-2.5 text-sm text-slate-900 placeholder:text-slate-400 transition outline-none focus:border-brand-500 focus:ring-4 focus:ring-brand-500/15 dark:border-slate-700 dark:bg-slate-900 dark:text-slate-100 dark:placeholder:text-slate-500;
+}
+
+@utility input-error {
+  @apply border-rose-500! focus:border-rose-500! focus:ring-rose-500/15!;
+}
+
+@utility btn {
+  @apply inline-flex items-center justify-center gap-2 rounded-xl px-4 py-2.5 text-sm font-medium transition focus-visible:ring-4 focus-visible:outline-none disabled:cursor-not-allowed disabled:opacity-60;
+}
+
+@utility btn-primary {
+  @apply btn bg-brand-600 text-white hover:bg-brand-700 focus-visible:ring-brand-500/30;
+}
+
+@utility btn-secondary {
+  @apply btn border border-slate-300 bg-white text-slate-700 hover:bg-slate-50 focus-visible:ring-slate-400/20 dark:border-slate-700 dark:bg-slate-900 dark:text-slate-200 dark:hover:bg-slate-800;
+}
+
+@utility btn-danger {
+  @apply btn bg-rose-600 text-white hover:bg-rose-700 focus-visible:ring-rose-500/30;
+}
+
+@utility icon-btn {
+  @apply inline-flex size-10 items-center justify-center rounded-xl text-slate-500 transition hover:bg-slate-100 hover:text-slate-800 focus-visible:ring-4 focus-visible:ring-brand-500/20 focus-visible:outline-none dark:text-slate-400 dark:hover:bg-slate-800 dark:hover:text-slate-100;
+}

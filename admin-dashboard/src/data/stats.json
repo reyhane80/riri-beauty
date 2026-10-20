@@ -1,0 +1,17 @@
+{
+  "users": {
+    "change": 12.4
+  },
+  "revenue": {
+    "total": 2994794668,
+    "change": 8.1
+  },
+  "orders": {
+    "total": 3184,
+    "change": -2.3
+  },
+  "conversion": {
+    "total": 3.6,
+    "change": 0.4
+  }
+}

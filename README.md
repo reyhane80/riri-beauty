@@ -14,6 +14,10 @@
 
 داده محصولات و کاربران در حال حاضر به‌صورت نمونه (mock) و در حافظه مرورگر (localStorage) مدیریت می‌شود و ساختار آن برای اتصال به یک بک‌اند واقعی آماده است (به‌ویژه `src/store` و `src/data`).
 
+## پنل مدیریت
+
+پوشه [`admin-dashboard`](admin-dashboard) یک پروژه جداگانه است: داشبورد مدیریتی فارسی با Vue 3، Pinia و Tailwind CSS. راهنمای آن در [`admin-dashboard/README.md`](admin-dashboard/README.md) است.
+
 ## اجرا
 
 ```bash
