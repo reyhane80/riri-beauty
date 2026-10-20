@@ -9,12 +9,16 @@ import Checkout from './pages/Checkout';
 import Login from './pages/Login';
 import Profile from './pages/Profile';
 import NotFound from './pages/NotFound';
+import CurrencyMiniApp from './pages/CurrencyMiniApp';
 
 export default function App() {
   return (
     <LanguageProvider>
       <BrowserRouter>
         <Routes>
+          {/* Telegram Mini App — standalone, no shell layout */}
+          <Route path="currency" element={<CurrencyMiniApp />} />
+
           <Route element={<MainLayout />}>
             <Route index element={<Home />} />
             <Route path="products" element={<Products />} />
