@@ -1,4 +1,4 @@
-import { createRouter, createWebHistory } from 'vue-router'
+import { createRouter, createWebHashHistory, createWebHistory } from 'vue-router'
 import { useAuthStore } from '@/stores/auth'
 import AdminLayout from '@/layouts/AdminLayout.vue'
 
@@ -49,8 +49,12 @@ const routes = [
   },
 ]
 
+// روی هاست‌های استاتیک مثل GitHub Pages از حالت hash استفاده می‌شود (فایل .env.pages)
+const history =
+  import.meta.env.VITE_ROUTER_MODE === 'hash' ? createWebHashHistory() : createWebHistory(import.meta.env.BASE_URL)
+
 const router = createRouter({
-  history: createWebHistory(import.meta.env.BASE_URL),
+  history,
   routes,
   scrollBehavior: () => ({ top: 0 }),
 })
